@@ -1,4 +1,6 @@
-
+* {     /* on utilise le sélecteur * puis oveflow pour adapter le contenu du container toujours la haut*/
+    overflow: auto;
+}   
 
 body{
     background-color: #8BA1BB;
@@ -7,19 +9,15 @@ body{
         
 div.contenu{
     background-color: white;
-    margin: 0 px 10% 80px 10px;
+    /*margin: 0 px 10% 80px 10px;
     padding: 30px;
-    min-width: 350px;
+    min-width: 350px;*/
     box-shadow: 0px 0px 8px 8px black(0, 0, 0, 0, 1);
 }
 
 h1{
     text-align: center;
 }
-
-* {     /* on utilise le sélecteur * puis oveflow pour adapter le contenu du container toujours la haut*/
-    overflow: auto;
-}   
 
 p.description{
     text-align: center;
@@ -70,7 +68,7 @@ table.info{
     bottom:3px; 
     width: 100%; color: white;
     background-color: #6C829DC0;
-    height: 80px;
+    height: 50px;
 }
 
 table.info td{
@@ -96,8 +94,7 @@ table.prepa p.numero {
         padding-top: 4px;
         box-sizing: border-box;
         border-radius: 50%;                                      /*pour la pastille ronde*/
-        margin: 0;
-    
+        margin: 0;    
     }
 
 table.prepa td{  /*pour remonter la pastille ronde vers le haut*/
@@ -121,13 +118,8 @@ img.info{
     min-height: 200px;
 }
 
-div.colonne1{   /*colonne1 pour mettre mes colonnes l'une à côté de l'autre*/
-    display: inline-block;     
-    margin-right: 10%;
-    width: 50%;
-    }
+div.ingredients p {
 
-div.ingredients p{
     text-align: center;
     border: 1px  solid ;
     font-size: 14px;
@@ -137,16 +129,8 @@ div.ingredients p{
     margin-bottom: 0;
 }
 
-div.colonne1, div.colonne2{
-    width: 50%;
-}
-
-div.colonne2{
-    float: right;              
-    }
-
 div.colonne{
-    width: 45%;
+    width: 100%;
     margin-top: 20px;                  /*marge pour le dessus qui sépare ingredients de l'image*/
 }
 
@@ -158,14 +142,56 @@ div.colonne h2{                      /* + le second colonne pour centrer les ing
     padding-bottom: 5px;  
 }
 
+div.colonne1{   /*colonne1 pour mettre mes colonnes l'une à côté de l'autre*/
+    display: inline-block;      
+}
+
+
 /*nos styles pour ordinateurs*/
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 768px) {
 
-div.contenu{
-        min-width: 250px; /*pour mobile*/
-        margin: -20px 10px 80px 10px; /*pour ordinateur*/
-        padding: 30px;
-        max-width: 650px;        
+        div.contenu {
+        margin: 60px 10% 80px 10%       /*pour ordinateur*/
+        padding: 0px 30px 30px 30px;
+        min-width: 350px;        
     }
 
+
+table.info{
+        height: 80px;
+    }
+    
+table.info td{
+        font-size: 16px;      
+        
+        }
+    
+table.info th{
+        font-size: 14px;      /*centrer les infos tableaux*/
+        }  
+
+/*style mobile*/
+
+div.colonne1{   /*colonne1 pour mettre mes colonnes l'une à côté de l'autre*/
+    margin-right: 10%;    
+}
+
+div.colonne2{
+    float: right;                  /*pour afficher la colonne sur la droite*/ 
+    }
+
+div.colonne{
+    width: 45%;
+ }
+
+/*div.colonne h2 est entièrement identique donc pas besoin de le remettre*/
+}
+
+@media only screen and (min-width: 900px) {
+
+    div.contenu {
+        margin-left: auto;
+        margin-right: auto;
+        width: 650px;  
+    }
